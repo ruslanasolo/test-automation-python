@@ -15,7 +15,7 @@ class TestException:
         wait = WebDriverWait(driver, 10)
         row_2_input_locator = wait.until(ec.presence_of_element_located((By.XPATH, "//div[@id='row2']/input")))
 
-        assert row_2_input_locator.is_displayed(), "Row 2 input should be displayed, but it's not"
+        assert row_2_input_locator._is_displayed(), "Row 2 input should be displayed, but it's not"
 
     @pytest.mark.exceptions
     @pytest.mark.debug
@@ -94,5 +94,5 @@ class TestException:
         row_2_input_locator = wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@id='row2']/input")),
                                          "Failed waiting for Row 2 input to be visible")
 
-        assert row_2_input_locator.is_displayed(), "Row 2 input should be displayed, but it's not"
+        assert row_2_input_locator._is_displayed(), "Row 2 input should be displayed, but it's not"
 
